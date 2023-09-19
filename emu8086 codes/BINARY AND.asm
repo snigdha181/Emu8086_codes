@@ -1,0 +1,26 @@
+;BINARY AND
+INCLUDE "EMU8086.INC"
+.MODEL SMALL
+.STACK 100H
+.DATA
+.CODE
+  MAIN PROC
+    MOV BH,1111B
+    MOV AH,2
+    MOV DL,BH
+    INT 21H
+    
+    PRINTN
+    
+    AND BH,0110B
+    
+    ADD BH,48
+    
+    MOV AH,2
+    MOV DL,BH
+    INT 21H
+    
+    MOV AH,4CH
+    INT 21H
+  MAIN ENDP
+END MAIN
